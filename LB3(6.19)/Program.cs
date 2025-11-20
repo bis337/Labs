@@ -4,7 +4,6 @@ using System.Text.Json;
 
 namespace LB3_6._19_
 {
-    // Класс для хранения результата
     public class GCDResult
     {
         public long Number1 { get; set; }
@@ -48,6 +47,19 @@ namespace LB3_6._19_
             var result = new GCDResult { Number1 = num1, Number2 = num2, GCD = largeComDiv };
             string json = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText("result.json", json);
+
+            // Десериализация и проверка
+            string jsonFromFile = File.ReadAllText("result.json");
+            var deserializedResult = JsonSerializer.Deserialize<GCDResult>(jsonFromFile);
+
+            if (deserializedResult.GCD == largeComDiv)
+            {
+                Console.WriteLine("Тест пройден: результат в JSON совпадает с вычисленным.");
+            }
+            else
+            {
+                Console.WriteLine("Тест не пройден: результат в JSON не совпадает с вычисленным.");
+            }
 
             Console.Read();
         }

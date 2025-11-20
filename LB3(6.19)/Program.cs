@@ -13,7 +13,7 @@ namespace LB3_6._19_
 
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args)//ddsdssssпп
         {
             // Чтение из файла
             string inputPath = "input.txt";

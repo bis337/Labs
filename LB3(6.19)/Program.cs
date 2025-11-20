@@ -7,30 +7,32 @@ namespace LB3_6._19_
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Задание 6.19");
-            Console.WriteLine("Введите первое число");
-            long num1 = Convert.ToInt64(Console.ReadLine());
-            Console.WriteLine("Введите второе число");
-            long num2 = Convert.ToInt64(Console.ReadLine());
-
-            // Запись в файл
+            // Чтение из файла
             string inputPath = "input.txt";
-            using (StreamWriter writer = new StreamWriter(inputPath))
+            if (!File.Exists(inputPath))
             {
-                writer.WriteLine(num1);
-                writer.WriteLine(num2);
+                Console.WriteLine("Файл input.txt не найден. Запустите программу и введите числа.");
+                Console.Read();
+                return;
             }
 
-            long i = 1;
+            string[] lines = File.ReadAllLines(inputPath);
+            long num1 = Convert.ToInt64(lines[0]);
+            long num2 = Convert.ToInt64(lines[1]);
+
+            // Улучшенный алгоритм НОД
             long largeComDiv = 0;
-            while (i <= Math.Min(Math.Abs(num1), Math.Abs(num2)))
+            long i = Math.Min(Math.Abs(num1), Math.Abs(num2));
+            while (i >= 1)
             {
                 if (num1 % i == 0 && num2 % i == 0)
                 {
                     largeComDiv = i;
+                    break; // первый найденный делитель - наибольший
                 }
-                i++;
+                i--;
             }
+
             Console.WriteLine($"Наибольший общий делитель: {largeComDiv}");
             Console.Read();
         }

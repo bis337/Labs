@@ -1,8 +1,17 @@
 ﻿using System;
 using System.IO;
+using System.Text.Json;
 
 namespace LB3_6._19_
 {
+    // Класс для хранения результата
+    public class GCDResult
+    {
+        public long Number1 { get; set; }
+        public long Number2 { get; set; }
+        public long GCD { get; set; }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -28,12 +37,18 @@ namespace LB3_6._19_
                 if (num1 % i == 0 && num2 % i == 0)
                 {
                     largeComDiv = i;
-                    break; // первый найденный делитель - наибольший
+                    break;
                 }
                 i--;
             }
 
             Console.WriteLine($"Наибольший общий делитель: {largeComDiv}");
+
+            // Сохранение результата в JSON
+            var result = new GCDResult { Number1 = num1, Number2 = num2, GCD = largeComDiv };
+            string json = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText("result.json", json);
+
             Console.Read();
         }
     }

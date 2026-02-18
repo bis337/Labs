@@ -1,0 +1,6 @@
+C:\Users\babyt\source\repos\My-Hard-Work\ЛБ1\Lab1\obj\Debug\net7.0\Lab1.csproj.AssemblyReference.cache
+C:\Users\babyt\source\repos\My-Hard-Work\ЛБ1\Lab1\obj\Debug\net7.0\Lab1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\babyt\source\repos\My-Hard-Work\ЛБ1\Lab1\obj\Debug\net7.0\Lab1.AssemblyInfoInputs.cache
+C:\Users\babyt\source\repos\My-Hard-Work\ЛБ1\Lab1\obj\Debug\net7.0\Lab1.AssemblyInfo.cs
+C:\Users\babyt\source\repos\My-Hard-Work\ЛБ1\Lab1\obj\Debug\net7.0\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\babyt\source\repos\My-Hard-Work\ЛБ1\Lab1\obj\Debug\net7.0\Lab1.sourcelink.json

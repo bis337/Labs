@@ -1,0 +1,2 @@
+C:\Users\babyt\source\repos\LB3(6.19)\obj\Debug\LB3(6.19).csproj.AssemblyReference.cache
+C:\Users\babyt\source\repos\LB3(6.19)\obj\Debug\LB3(6.19).csproj.CoreCompileInputs.cache
